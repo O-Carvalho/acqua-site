@@ -1,0 +1,2327 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="ACQUA Progresso - A nova era da sua lavanderia chegou em Jundiaí. Lavanderia self-service 24h.">
+    <title>ACQUA Progresso | Inauguração em Jundiaí</title>
+
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="ACQUA Progresso | Inauguração">
+    <meta property="og:description"
+        content="A nova era da sua lavanderia chegou em Jundiaí. Desconto especial de inauguração!">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://acqua-progresso.com.br">
+    <meta property="og:image" content="assets/og-image.jpg">
+
+    <!-- Google Fonts: Luckiest Guy & Poppins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&family=Poppins:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Phosphor Icons (for generic icons) -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+
+    <style>
+        /* CSS variables */
+        :root {
+            --acqua-azul: #001D3D;
+            --acqua-laranja: #F26522;
+            --acqua-branco: #FFFFFF;
+            --azul-escuro: #000B1A;
+            --laranja-escuro: #D1541D;
+            --cinza-claro: #FAFAFA;
+            --cinza-medio: #6B7785;
+            --border-radius-sm: 8px;
+            --border-radius-lg: 24px;
+            --container-max: 1200px;
+        }
+
+        /* Reset & Base */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: var(--acqua-azul);
+            background-color: var(--acqua-branco);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-family: 'Luckiest Guy', cursive;
+            line-height: 1.2;
+            font-weight: normal;
+            letter-spacing: 1px;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        button {
+            cursor: pointer;
+            font-family: inherit;
+            border: none;
+            background: none;
+        }
+
+        .container {
+            max-width: var(--container-max);
+            margin: 0 auto;
+            padding: 0 5%;
+        }
+
+        section {
+            padding: 7rem 0;
+        }
+
+        @media (max-width: 768px) {
+            section {
+                padding: 4rem 0;
+            }
+        }
+
+        /* Typography */
+        .h1 {
+            font-size: clamp(2.2rem, 5vw, 3.8rem);
+        }
+
+        .h2 {
+            font-size: clamp(1.8rem, 3.5vw, 2.5rem);
+        }
+
+        .h3 {
+            font-size: 1.15rem;
+            font-weight: 600;
+        }
+
+        .body-text {
+            font-size: 1rem;
+            font-weight: 400;
+        }
+
+        .small-text {
+            font-size: 0.85rem;
+            font-weight: 400;
+        }
+
+        /* Buttons */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0.8rem 1.5rem;
+            border-radius: var(--border-radius-sm);
+            font-weight: 600;
+            transition: all 0.3s ease;
+            gap: 0.5rem;
+            text-align: center;
+            text-transform: uppercase;
+        }
+
+        .btn-primary {
+            background-color: var(--acqua-laranja);
+            color: var(--acqua-branco);
+            box-shadow: 0 4px 6px rgba(255, 102, 0, 0.2);
+        }
+
+        .btn-primary:hover {
+            background-color: var(--laranja-escuro);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(255, 102, 0, 0.3);
+        }
+
+        .btn-outline-white {
+            background-color: transparent;
+            color: var(--acqua-branco);
+            border: 2px solid var(--acqua-branco);
+        }
+
+        .btn-outline-white:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+            transform: translateY(-2px);
+        }
+
+        /* Animations */
+        .animar {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .animar-esquerda {
+            opacity: 0;
+            transform: translateX(-40px);
+            transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .animar-direita {
+            opacity: 0;
+            transform: translateX(40px);
+            transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .visivel {
+            opacity: 1;
+            transform: translate(0);
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+
+            *,
+            *::before,
+            *::after {
+                animation-duration: 0.01ms !important;
+                transition-duration: 0.01ms !important;
+            }
+
+            .animar,
+            .animar-esquerda,
+            .animar-direita {
+                opacity: 1;
+                transform: none;
+                transition: none;
+            }
+        }
+
+        /* ---------------- HEADER ---------------- */
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background-color: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid #E2E8F0;
+            height: 70px;
+            display: flex;
+            align-items: center;
+            transition: box-shadow 0.3s ease;
+        }
+
+        header.scrolled {
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-weight: 700;
+            font-size: 1.2rem;
+            color: var(--acqua-azul);
+        }
+
+        .logo-icon {
+            width: 32px;
+            height: 32px;
+            background-color: var(--acqua-azul);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--acqua-branco);
+            font-size: 1.2rem;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .nav-links a {
+            font-weight: 500;
+            transition: color 0.2s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--acqua-laranja);
+        }
+
+        .menu-toggle {
+            display: none;
+            font-size: 1.5rem;
+            color: var(--acqua-azul);
+        }
+
+        @media (max-width: 992px) {
+            .nav-links {
+                position: absolute;
+                top: 70px;
+                left: 0;
+                right: 0;
+                background-color: var(--acqua-branco);
+                flex-direction: column;
+                padding: 2rem;
+                gap: 1.5rem;
+                box-shadow: 0 10px 15px rgba(0, 0, 0, 0.05);
+                clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+                transition: clip-path 0.3s ease-out;
+            }
+
+            .nav-links.active {
+                clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+            }
+
+            .menu-toggle {
+                display: block;
+            }
+        }
+
+        /* ---------------- HERO ---------------- */
+        .hero {
+            position: relative;
+            width: 100%;
+            background-color: var(--acqua-azul);
+            padding: 0;
+            display: flex;
+        }
+
+        .hero-decor {
+            position: absolute;
+            top: -10%;
+            right: -5%;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(255, 102, 0, 0.15) 0%, rgba(255, 102, 0, 0) 70%);
+            border-radius: 50%;
+            animation: floatSlow 6s ease-in-out infinite;
+            z-index: 0;
+        }
+
+        @keyframes floatSlow {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-20px);
+            }
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1.5rem;
+        }
+
+        .hero-content>* {
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeSlideUp 0.8s ease-out forwards;
+        }
+
+        .hero-content>*:nth-child(1) {
+            animation-delay: 0.1s;
+        }
+
+        .hero-content>*:nth-child(2) {
+            animation-delay: 0.3s;
+        }
+
+        .hero-content>*:nth-child(3) {
+            animation-delay: 0.5s;
+        }
+
+        .hero-content>*:nth-child(4) {
+            animation-delay: 0.7s;
+        }
+
+        .hero-content>*:nth-child(5) {
+            animation-delay: 0.9s;
+        }
+
+        @keyframes fadeSlideUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .badge {
+            background-color: rgba(255, 102, 0, 0.2);
+            color: var(--acqua-laranja);
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            display: inline-flex;
+            align-items: center;
+            border: 1px solid rgba(255, 102, 0, 0.3);
+        }
+
+        .hero-title span {
+            color: var(--acqua-laranja);
+        }
+
+        .countdown {
+            display: flex;
+            gap: 1rem;
+            margin: 2rem 0;
+            justify-content: center;
+        }
+
+        .countdown-item {
+            background-color: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: var(--border-radius-sm);
+            padding: 1rem;
+            min-width: 80px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .countdown-number {
+            font-size: 2rem;
+            font-weight: 700;
+            line-height: 1;
+            transition: transform 0.3s;
+        }
+
+        .countdown-number.flip {
+            animation: flip 0.6s ease-in-out;
+        }
+
+        @keyframes flip {
+            0% {
+                transform: rotateX(0);
+            }
+
+            50% {
+                transform: rotateX(90deg);
+            }
+
+            100% {
+                transform: rotateX(0);
+            }
+        }
+
+        .countdown-label {
+            color: var(--acqua-laranja);
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-top: 0.5rem;
+            text-transform: uppercase;
+        }
+
+        .pulse-sec {
+            animation: pulseSec 1s infinite;
+        }
+
+        @keyframes pulseSec {
+
+            0%,
+            100% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.05);
+            }
+        }
+
+        .hero-ctas {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .scroll-indicator {
+            position: absolute;
+            bottom: 2rem;
+            left: 50%;
+            transform: translateX(-50%);
+            animation: bounce 2s infinite;
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 2rem;
+        }
+
+        @keyframes bounce {
+
+            0%,
+            20%,
+            50%,
+            80%,
+            100% {
+                transform: translateY(0) translateX(-50%);
+            }
+
+            40% {
+                transform: translateY(-20px) translateX(-50%);
+            }
+
+            60% {
+                transform: translateY(-10px) translateX(-50%);
+            }
+        }
+
+        /* ---------------- CUPOM BANNER ---------------- */
+        .cupom-banner {
+            background-color: var(--acqua-laranja);
+            color: var(--acqua-branco);
+            text-align: center;
+            padding: 4rem 0;
+        }
+
+        .cupom-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1.5rem;
+        }
+
+        .cupom-box-wrapper {
+            position: relative;
+            margin: 1.5rem 0;
+        }
+
+        .cupom-box {
+            background-color: var(--acqua-branco);
+            border: 2px dashed var(--acqua-azul);
+            padding: 1rem 2rem;
+            border-radius: var(--border-radius-sm);
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            animation: pulseCupom 3s infinite;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        @keyframes pulseCupom {
+
+            0%,
+            100% {
+                box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.4);
+            }
+
+            50% {
+                box-shadow: 0 0 0 12px rgba(255, 255, 255, 0);
+            }
+        }
+
+        .cupom-code {
+            color: var(--acqua-azul);
+            font-size: 1.5rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+        }
+
+        .btn-copy {
+            background-color: var(--acqua-azul);
+            color: var(--acqua-branco);
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+        }
+
+        .btn-copy:hover {
+            background-color: var(--azul-escuro);
+        }
+
+        .btn-copy.idle {
+            animation: shake 5s infinite;
+            animation-delay: 2s;
+        }
+
+        @keyframes shake {
+
+            0%,
+            100% {
+                transform: translateX(0);
+            }
+
+            2%,
+            6%,
+            10% {
+                transform: translateX(-5px);
+            }
+
+            4%,
+            8% {
+                transform: translateX(5px);
+            }
+
+            12% {
+                transform: translateX(0);
+            }
+        }
+
+        .price-highlight {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+
+        .price-old {
+            text-decoration: line-through;
+            opacity: 0.7;
+            position: relative;
+        }
+
+        .price-old::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: -10%;
+            width: 120%;
+            height: 2px;
+            background-color: var(--acqua-branco);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.6s ease;
+        }
+
+        .visivel .price-old::after {
+            transform: scaleX(1);
+        }
+
+        .price-new {
+            font-size: 2.5rem;
+            color: var(--acqua-azul);
+            background: rgba(255, 255, 255, 0.9);
+            padding: 0.2rem 1rem;
+            border-radius: 50px;
+            display: inline-block;
+            transform: scale(0.8);
+            transition: transform 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .visivel .price-new {
+            transform: scale(1);
+        }
+
+        /* ---------------- SOBRE ---------------- */
+        .sobre-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        @media (max-width: 768px) {
+            .sobre-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+        }
+
+        .sobre-texto h2 {
+            margin-bottom: 1.5rem;
+            color: var(--acqua-azul);
+        }
+
+        .sobre-texto p {
+            margin-bottom: 1rem;
+            color: var(--cinza-medio);
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .stat-card {
+            background-color: var(--acqua-branco);
+            padding: 2rem;
+            border-radius: var(--border-radius-lg);
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 0.5rem;
+            border: 1px solid #EAEAEA;
+            transition: all 0.4s ease;
+            box-shadow: 0 4px 15px rgba(0, 29, 61, 0.05);
+        }
+
+        .stat-card:hover {
+            border-color: rgba(242, 101, 34, 0.5);
+            transform: translateY(-6px);
+            box-shadow: 0 20px 40px rgba(0, 29, 61, 0.1);
+        }
+
+        .stat-icon {
+            font-size: 2rem;
+            color: var(--acqua-laranja);
+            transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .visivel .stat-icon {
+            animation: bounceIn 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        @keyframes bounceIn {
+            0% {
+                transform: scale(0);
+            }
+
+            50% {
+                transform: scale(1.2);
+            }
+
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        .sobre-imagem {
+            border-radius: var(--border-radius-lg);
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(18, 43, 71, 0.1);
+            position: relative;
+            aspect-ratio: 4/3;
+            background: transparent;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* ---------------- VANTAGENS ---------------- */
+        .vantagens {
+            background-color: var(--cinza-claro);
+            text-align: center;
+        }
+
+        .vantagens-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-auto-rows: minmax(280px, auto);
+            gap: 2rem;
+            margin-top: 4rem;
+        }
+
+        @media (max-width: 992px) {
+            .vantagens-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 576px) {
+            .vantagens-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (min-width: 993px) {
+            .vantagem-card.span-2 {
+                grid-column: span 2;
+            }
+        }
+
+        .vantagem-card {
+            background-color: var(--acqua-branco);
+            padding: 3rem 2rem;
+            border-radius: var(--border-radius-lg);
+            border: 1px solid #EAEAEA;
+            transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            text-align: left;
+            gap: 1.5rem;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0, 29, 61, 0.05);
+        }
+
+        .vantagem-card:hover {
+            transform: translateY(-6px);
+            border-color: rgba(242, 101, 34, 0.5);
+            box-shadow: 0 25px 50px rgba(0, 29, 61, 0.1);
+        }
+
+        .vantagem-icon-wrapper {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            background-color: rgba(255, 102, 0, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 0.5rem;
+            transition: background-color 0.3s ease;
+        }
+
+        .vantagem-icon {
+            font-size: 2.5rem;
+            color: var(--acqua-laranja);
+            transition: transform 0.6s ease;
+        }
+
+        .vantagem-card:hover .vantagem-icon-wrapper {
+            background-color: var(--acqua-laranja);
+        }
+
+        .vantagem-card:hover .vantagem-icon {
+            color: var(--acqua-branco);
+            transform: rotate(360deg) scale(1.1);
+        }
+
+        .vantagem-card h3 {
+            color: var(--acqua-azul);
+        }
+
+        .vantagem-card p {
+            color: var(--cinza-medio);
+            font-size: 0.95rem;
+        }
+
+        /* ---------------- COMO FUNCIONA ---------------- */
+        .como-funciona {
+            text-align: center;
+        }
+
+        .passos-container {
+            display: flex;
+            justify-content: space-between;
+            position: relative;
+            margin-top: 4rem;
+        }
+
+        @media (max-width: 768px) {
+            .passos-container {
+                flex-direction: column;
+                gap: 3rem;
+                align-items: flex-start;
+                padding-left: 2rem;
+            }
+        }
+
+        .passos-linha {
+            position: absolute;
+            top: 40px;
+            left: 10%;
+            right: 10%;
+            height: 2px;
+            background-color: var(--cinza-claro);
+            z-index: 0;
+        }
+
+        .passos-linha-progresso {
+            height: 100%;
+            width: 0;
+            background-color: var(--acqua-laranja);
+            transition: width 1.2s ease-in-out;
+        }
+
+        .visivel .passos-linha-progresso {
+            width: 100%;
+        }
+
+        @media (max-width: 768px) {
+            .passos-linha {
+                top: 0;
+                bottom: 0;
+                left: 40px;
+                right: auto;
+                height: 100%;
+                width: 2px;
+            }
+
+            .passos-linha-progresso {
+                width: 100%;
+                height: 0;
+                transition: height 1.2s ease-in-out;
+            }
+
+            .visivel .passos-linha-progresso {
+                height: 100%;
+            }
+        }
+
+        .passo {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        @media (max-width: 768px) {
+            .passo {
+                flex-direction: row;
+                text-align: left;
+                gap: 1.5rem;
+            }
+        }
+
+        .passo-numero {
+            width: 80px;
+            height: 80px;
+            background-color: var(--acqua-branco);
+            border: 2px solid var(--acqua-laranja);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--acqua-laranja);
+            margin-bottom: 1.5rem;
+            box-shadow: 0 0 0 10px var(--acqua-branco);
+            transition: all 0.4s ease;
+        }
+
+        @media (max-width: 768px) {
+            .passo-numero {
+                margin-bottom: 0;
+                min-width: 80px;
+            }
+        }
+
+        .passo:hover .passo-numero {
+            background-color: var(--acqua-laranja);
+            color: var(--acqua-branco);
+            box-shadow: 0 0 0 10px rgba(255, 102, 0, 0.2);
+            transform: scale(1.05);
+        }
+
+        .passo-texto h3 {
+            margin-bottom: 0.5rem;
+        }
+
+        .passo-texto p {
+            color: var(--cinza-medio);
+        }
+
+        /* ---------------- APP SECTION ---------------- */
+        .app-section {
+            background-color: var(--acqua-azul);
+            color: var(--acqua-branco);
+            overflow: hidden;
+        }
+
+        .app-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        @media (max-width: 768px) {
+            .app-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .app-mockup {
+                grid-row: 1;
+            }
+        }
+
+        .app-mockup-wrapper {
+            position: relative;
+            display: flex;
+            justify-content: center;
+        }
+
+        .app-mockup {
+            width: 100%;
+            max-width: 450px;
+            height: auto;
+            background: transparent;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            animation: float 4s ease-in-out infinite;
+            position: relative;
+        }
+
+
+
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-15px);
+            }
+        }
+
+        .app-text h2 span {
+            color: var(--acqua-laranja);
+        }
+
+        .app-bullets {
+            margin: 2rem 0;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .app-bullet {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            font-size: 1.1rem;
+        }
+
+        .bullet-check {
+            color: var(--acqua-laranja);
+            font-size: 1.5rem;
+        }
+
+        .store-btns {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .store-btn {
+            background-color: var(--acqua-branco);
+            color: var(--acqua-azul);
+            padding: 0.8rem 1.5rem;
+            border-radius: var(--border-radius-sm);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .store-btn::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.8), transparent);
+            transform: translateX(-100%);
+            animation: shimmer 4s infinite;
+        }
+
+        @keyframes shimmer {
+            0% {
+                transform: translateX(-100%);
+            }
+
+            20%,
+            100% {
+                transform: translateX(100%);
+            }
+        }
+
+        .store-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        /* ---------------- LOCALIZAÇÃO ---------------- */
+        .localizacao-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+        }
+
+        @media (max-width: 768px) {
+            .localizacao-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+        }
+
+        .info-items {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .info-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            padding: 1rem;
+            border-radius: var(--border-radius-sm);
+            transition: background-color 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .info-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background-color: var(--cinza-claro);
+            transition: left 0.3s ease;
+            z-index: -1;
+        }
+
+        .info-item:hover::before {
+            left: 0;
+        }
+
+        .info-icon {
+            width: 48px;
+            height: 48px;
+            background-color: rgba(255, 102, 0, 0.1);
+            color: var(--acqua-laranja);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            flex-shrink: 0;
+            animation: pulseIcon 2s infinite;
+        }
+
+        @keyframes pulseIcon {
+            0% {
+                box-shadow: 0 0 0 0 rgba(255, 102, 0, 0.4);
+            }
+
+            70% {
+                box-shadow: 0 0 0 10px rgba(255, 102, 0, 0);
+            }
+
+            100% {
+                box-shadow: 0 0 0 0 rgba(255, 102, 0, 0);
+            }
+        }
+
+        .info-texto h4 {
+            color: var(--acqua-azul);
+            margin-bottom: 0.2rem;
+        }
+
+        .info-texto p {
+            color: var(--cinza-medio);
+        }
+
+        .mapa-wrapper {
+            border-radius: var(--border-radius-lg);
+            overflow: hidden;
+            height: 400px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transform: scale(0.95);
+            transition: transform 0.6s ease;
+        }
+
+        .visivel .mapa-wrapper {
+            transform: scale(1);
+        }
+
+        .mapa-wrapper iframe {
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
+        /* ---------------- FAQ ---------------- */
+        .faq {
+            background-color: var(--cinza-claro);
+        }
+
+        .faq-container {
+            max-width: 800px;
+            margin: 3rem auto 0;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .faq-item {
+            background-color: var(--acqua-branco);
+            border-radius: var(--border-radius-sm);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.02);
+            overflow: hidden;
+            transition: all 0.3s ease;
+            border-left: 0px solid var(--acqua-laranja);
+        }
+
+        .faq-item.ativo {
+            border-left: 4px solid var(--acqua-laranja);
+        }
+
+        .faq-pergunta {
+            padding: 1.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            font-weight: 600;
+            color: var(--acqua-azul);
+            transition: background-color 0.2s ease;
+        }
+
+        .faq-pergunta:hover {
+            background-color: rgba(18, 43, 71, 0.02);
+        }
+
+        .faq-icon {
+            color: var(--acqua-laranja);
+            font-size: 1.2rem;
+            transition: transform 0.3s ease;
+        }
+
+        .faq-item.ativo .faq-icon {
+            transform: rotate(45deg);
+        }
+
+        .faq-resposta {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+            background-color: var(--acqua-branco);
+        }
+
+        .faq-resposta-inner {
+            padding: 0 1.5rem 1.5rem;
+            color: var(--cinza-medio);
+        }
+
+        /* ---------------- CTA FINAL ---------------- */
+        .cta-final {
+            background-color: var(--acqua-laranja);
+            color: var(--acqua-branco);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-final::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: repeating-linear-gradient(45deg,
+                    transparent,
+                    transparent 10px,
+                    rgba(255, 255, 255, 0.05) 10px,
+                    rgba(255, 255, 255, 0.05) 20px);
+            animation: moveStripes 20s linear infinite;
+            z-index: 0;
+        }
+
+        @keyframes moveStripes {
+            0% {
+                transform: translateY(0);
+            }
+
+            100% {
+                transform: translateY(-50px);
+            }
+        }
+
+        .cta-final-content {
+            position: relative;
+            z-index: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        .btn-cta-final {
+            background-color: var(--acqua-branco);
+            color: var(--acqua-laranja);
+            font-size: 1.2rem;
+            padding: 1rem 2.5rem;
+            border-radius: 50px;
+            animation: pulseBtnCta 2s infinite;
+        }
+
+        @keyframes pulseBtnCta {
+            0% {
+                box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.4);
+            }
+
+            70% {
+                box-shadow: 0 0 0 15px rgba(255, 255, 255, 0);
+            }
+
+            100% {
+                box-shadow: 0 0 0 0 rgba(255, 255, 255, 0);
+            }
+        }
+
+        .btn-cta-final:hover {
+            background-color: var(--acqua-azul);
+            color: var(--acqua-branco);
+            transform: scale(1.05);
+            animation: none;
+        }
+
+        /* ---------------- FOOTER ---------------- */
+        footer {
+            background-color: var(--acqua-azul);
+            color: rgba(255, 255, 255, 0.7);
+            padding: 4rem 0 2rem;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        @media (max-width: 992px) {
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .footer-col h4 {
+            color: var(--acqua-branco);
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+        }
+
+        .footer-logo {
+            color: var(--acqua-branco);
+            font-size: 1.5rem;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .footer-social {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .social-icon {
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--acqua-branco);
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+        }
+
+        .social-icon:hover {
+            background-color: var(--acqua-laranja);
+            transform: scale(1.1);
+        }
+
+        .footer-links {
+            display: flex;
+            flex-direction: column;
+            gap: 0.8rem;
+        }
+
+        .footer-links a {
+            transition: all 0.2s ease;
+            display: inline-block;
+        }
+
+        .footer-links a:hover {
+            color: var(--acqua-laranja);
+            transform: translateX(5px);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 2rem;
+            text-align: center;
+            font-size: 0.9rem;
+        }
+
+        /* ---------------- FLOATING ELEMENTS ---------------- */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 2rem;
+            left: 2rem;
+            width: 60px;
+            height: 60px;
+            background-color: #25D366;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            z-index: 99;
+            transition: transform 0.3s ease;
+            animation: pulseWpp 2s infinite, bounceIn 0.6s;
+        }
+
+        @keyframes pulseWpp {
+            0% {
+                box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.5);
+            }
+
+            70% {
+                box-shadow: 0 0 0 15px rgba(37, 211, 102, 0);
+            }
+
+            100% {
+                box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+            }
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+            animation: none;
+        }
+
+        .toast {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            background-color: var(--acqua-azul);
+            color: var(--acqua-branco);
+            padding: 1rem 1.5rem;
+            border-radius: var(--border-radius-sm);
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+            z-index: 100;
+            transform: translateY(100px);
+            opacity: 0;
+            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .toast.show {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        .toast-icon {
+            color: var(--acqua-laranja);
+            font-size: 1.5rem;
+        }
+
+        /* --- GLASSMORPHISM COUNTDOWN --- */
+        .hero-custom-padding {
+            padding-bottom: 300px;
+        }
+
+        .hero-glass-container {
+            background: rgba(0, 29, 61, 0.5);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 24px;
+            padding: 3rem 2rem;
+            box-shadow: 0 25px 70px rgba(0, 0, 0, 0.5);
+            margin-top: -280px;
+            position: relative;
+            z-index: 10;
+            animation: float-subtle 6s ease-in-out infinite;
+            text-align: center;
+        }
+
+        @keyframes float-subtle {
+            0% {
+                transform: translateY(0px);
+            }
+
+            50% {
+                transform: translateY(-12px);
+            }
+
+            100% {
+                transform: translateY(0px);
+            }
+        }
+
+        .anim-title {
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeUp 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+
+        @keyframes fadeUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .countdown-glass {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            margin: 3rem 0;
+        }
+
+        @media (max-width: 768px) {
+            .countdown-glass {
+                gap: 1.5rem;
+                flex-wrap: wrap;
+            }
+
+            .hero-custom-padding {
+                padding-bottom: 150px;
+            }
+
+            .hero-glass-container {
+                margin-top: -140px;
+                padding: 2rem 1rem;
+            }
+        }
+
+        .countdown-glass-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-width: 80px;
+            opacity: 0;
+            animation: fadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+
+        .countdown-glass-item:nth-child(1) {
+            animation-delay: 0.2s;
+        }
+
+        .countdown-glass-item:nth-child(2) {
+            animation-delay: 0.4s;
+        }
+
+        .countdown-glass-item:nth-child(3) {
+            animation-delay: 0.6s;
+        }
+
+        .countdown-glass-item:nth-child(4) {
+            animation-delay: 0.8s;
+        }
+
+        .countdown-number {
+            font-size: 4rem;
+            font-weight: 700;
+            color: var(--acqua-branco);
+            line-height: 1;
+            transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        @media (max-width: 768px) {
+            .countdown-number {
+                font-size: 2.8rem;
+            }
+        }
+
+        .countdown-number.tick {
+            transform: scale(1.1);
+        }
+
+        .countdown-label {
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            color: rgba(255, 255, 255, 0.5);
+            margin-top: 0.8rem;
+            font-weight: 500;
+        }
+
+        /* --- HERO TRANSITION --- */
+        .hero-glow {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 60%;
+            height: 60%;
+            background: radial-gradient(circle, rgba(255, 107, 0, 0.4) 0%, rgba(255, 107, 0, 0) 70%);
+            z-index: 1;
+            filter: blur(40px);
+            pointer-events: none;
+        }
+
+        .hero-basket-img {
+            animation: float-basket 4s ease-in-out infinite;
+            filter: drop-shadow(0 25px 35px rgba(0, 0, 0, 0.6));
+            -webkit-mask-image: linear-gradient(to bottom, black 85%, transparent 100%);
+            mask-image: linear-gradient(to bottom, black 85%, transparent 100%);
+        }
+
+        @keyframes float-basket {
+            0% {
+                transform: translateY(0px);
+            }
+
+            50% {
+                transform: translateY(-15px);
+            }
+
+            100% {
+                transform: translateY(0px);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .wave-divider svg {
+                height: 60px !important;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header id="header">
+        <div class="container header-content">
+            <a href="#" class="logo">
+                <img src="assets/oficiais/logo_acqua_nova.png" alt="ACQUA Lavanderia Express" style="height: 100px">
+            </a>
+
+            <nav class="nav-links" id="nav-links">
+                <a href="#hero">Inauguração</a>
+                <a href="#vantagens">Vantagens</a>
+                <a href="#como-funciona">Como Funciona</a>
+                <a href="#localizacao">Localização</a>
+            </nav>
+
+            <a href="#app" class="btn btn-primary d-none-mobile" id="header-cta">
+                <i class="ph ph-device-mobile"></i> Baixar o App
+            </a>
+
+            <button class="menu-toggle" id="menu-toggle" aria-label="Abrir menu">
+                <i class="ph ph-list"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- HERO -->
+    <section id="hero" class="hero hero-custom-padding"
+        style="background: linear-gradient(to bottom, #0d1838 0%, #1a2a5c 100%); position: relative; z-index: 1; overflow: hidden;">
+        <!-- Glow Layer -->
+        <div class="hero-glow"></div>
+
+        <img src="assets/oficiais/hero_novo.png" alt="Inauguração ACQUA" class="hero-basket-img"
+            style="width: 100%; height: auto; display: block; position: relative; z-index: 2;">
+
+        <!-- Wave Divider -->
+        <div class="wave-divider"
+            style="position: absolute; bottom: 0; left: 0; width: 100%; overflow: hidden; line-height: 0; z-index: 3;">
+            <svg viewBox="0 0 1200 120" preserveAspectRatio="none"
+                style="position: relative; display: block; width: calc(100% + 1.3px); height: 120px; margin-bottom: -1px;">
+                <path
+                    d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V120H0V95.8C52.16,112.7,105,116,157.9,109.84,213.15,103.37,268.4,85.2,321.39,56.44Z"
+                    fill="#0a1530"></path>
+            </svg>
+        </div>
+    </section>
+
+    <!-- COUNTDOWN & CTAS (Integrated) -->
+    <section id="inauguracao"
+        style="background: linear-gradient(to bottom, #0a1530 0%, var(--acqua-branco) 100%); padding: 0 0 6rem 0; position: relative; z-index: 2; margin-top: -1px;">
+        <div class="container">
+            <div class="hero-glass-container">
+                <div class="badge anim-title"
+                    style="background-color: rgba(255, 255, 255, 0.05); color: rgba(255,255,255,0.8); padding: 0.5rem 1.2rem; border-radius: 50px; font-weight: 500; font-size: 0.8rem; letter-spacing: 2px; display: inline-block; margin-bottom: 1.5rem; border: 1px solid rgba(255,255,255,0.1);">
+                    INAUGURAÇÃO JUNDIAÍ
+                </div>
+
+                <h2 class="h2 anim-title" style="color: var(--acqua-branco); animation-delay: 0.1s; font-weight: 600;">
+                    Faltam poucos dias para a <span style="color: var(--acqua-laranja);">nova era</span> da sua
+                    lavanderia</h2>
+
+                <div class="countdown-glass" id="countdown">
+                    <div class="countdown-glass-item">
+                        <span class="countdown-number" id="dias">00</span>
+                        <span class="countdown-label">Dias</span>
+                    </div>
+                    <div class="countdown-glass-item">
+                        <span class="countdown-number" id="horas">00</span>
+                        <span class="countdown-label">Horas</span>
+                    </div>
+                    <div class="countdown-glass-item">
+                        <span class="countdown-number" id="min">00</span>
+                        <span class="countdown-label">Min</span>
+                    </div>
+                    <div class="countdown-glass-item">
+                        <span class="countdown-number" id="seg">00</span>
+                        <span class="countdown-label">Seg</span>
+                    </div>
+                </div>
+
+                <div class="hero-ctas anim-title"
+                    style="margin-top: 2rem; animation-delay: 1s; display: flex; justify-content: center; gap: 1.5rem; flex-wrap: wrap;">
+                    <a href="#app" class="btn btn-primary"
+                        style="font-size: 1rem; padding: 1rem 2.5rem; border-radius: 50px; box-shadow: 0 10px 20px rgba(242, 101, 34, 0.25); border: none;">
+                        <i class="ph ph-device-mobile"></i> Baixar App
+                    </a>
+                    <a href="https://wa.me/5511998525796" target="_blank" class="btn btn-outline-white"
+                        style="background-color: #25D366; border-color: #25D366; color: white; font-size: 1rem; padding: 1rem 2.5rem; border-radius: 50px; box-shadow: 0 10px 20px rgba(37, 211, 102, 0.25);">
+                        <i class="ph ph-whatsapp-logo"></i> Suporte
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SOBRE -->
+    <section id="sobre">
+        <div class="container sobre-grid">
+            <div class="sobre-texto animar-esquerda">
+                <h2 class="h2">A sua lavanderia 24h na Vila Progresso</h2>
+                <p>A ACQUA Progresso traz para Jundiaí o conceito mais moderno de lavanderia self-service. Sem filas,
+                    sem moedas e com acompanhamento em tempo real direto do seu celular.</p>
+                <p>Equipada com máquinas de última geração e produtos profissionais já inclusos (sabão e amaciante
+                    premium), garantimos roupas limpas e secas em pouco mais de uma hora.</p>
+
+                <div class="stats-grid">
+                    <div class="stat-card animar" style="transition-delay: 100ms;">
+                        <i class="ph ph-washing-machine stat-icon"></i>
+                        <h4>Lava e Seca</h4>
+                        <p class="small-text">Em aprox. 1h15</p>
+                    </div>
+                    <div class="stat-card animar" style="transition-delay: 200ms;">
+                        <i class="ph ph-device-mobile stat-icon"></i>
+                        <h4>100% Digital</h4>
+                        <p class="small-text">Via App exclusivo</p>
+                    </div>
+                    <div class="stat-card animar" style="transition-delay: 300ms;">
+                        <i class="ph ph-clock stat-icon"></i>
+                        <h4>Aberto 24h</h4>
+                        <p class="small-text">Todos os dias</p>
+                    </div>
+                    <div class="stat-card animar" style="transition-delay: 400ms;">
+                        <i class="ph ph-leaf stat-icon"></i>
+                        <h4>Sustentável</h4>
+                        <p class="small-text">Economia de água</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="sobre-imagem animar-direita" style="background: transparent; box-shadow: none;">
+                <!-- Imagem da loja será inserida aqui futuramente -->
+            </div>
+        </div>
+    </section>
+
+    <!-- VANTAGENS -->
+    <section id="vantagens" class="vantagens">
+        <div class="container">
+            <h2 class="h2 animar">Por que escolher a ACQUA?</h2>
+
+            <div class="vantagens-grid">
+                <div class="vantagem-card span-2 animar" style="transition-delay: 100ms;">
+                    <div class="vantagem-icon-wrapper">
+                        <i class="ph ph-timer vantagem-icon"></i>
+                    </div>
+                    <h3>Rapidez</h3>
+                    <p>Roupas limpas e secas em tempo recorde. Otimize seu dia enquanto cuidamos da sua roupa.</p>
+                </div>
+
+                <div class="vantagem-card animar" style="transition-delay: 200ms;">
+                    <div class="vantagem-icon-wrapper">
+                        <i class="ph ph-device-mobile vantagem-icon"></i>
+                    </div>
+                    <h3>App Próprio</h3>
+                    <p>Reserve máquinas, acompanhe os ciclos e pague diretamente pelo aplicativo.</p>
+                </div>
+
+                <div class="vantagem-card animar" style="transition-delay: 300ms;">
+                    <div class="vantagem-icon-wrapper">
+                        <i class="ph ph-drop vantagem-icon"></i>
+                    </div>
+                    <h3>Produtos Premium</h3>
+                    <p>Sabão e amaciante de alta qualidade injetados automaticamente. Não precisa trazer nada.</p>
+                </div>
+
+                <div class="vantagem-card span-2 animar" style="transition-delay: 400ms;">
+                    <div class="vantagem-icon-wrapper">
+                        <i class="ph ph-clock vantagem-icon"></i>
+                    </div>
+                    <h3>Aberta 24h</h3>
+                    <p>Lave suas roupas na hora que for melhor para você. Todos os dias da semana, sem exceção.</p>
+                </div>
+
+                <div class="vantagem-card span-2 animar" style="transition-delay: 500ms;">
+                    <div class="vantagem-icon-wrapper">
+                        <i class="ph ph-plant vantagem-icon"></i>
+                    </div>
+                    <h3>Sustentável</h3>
+                    <p>Máquinas eficientes que economizam água e energia, cuidando da sua roupa e do planeta.</p>
+                </div>
+
+                <div class="vantagem-card animar" style="transition-delay: 600ms;">
+                    <div class="vantagem-icon-wrapper">
+                        <i class="ph ph-credit-card vantagem-icon"></i>
+                    </div>
+                    <h3>Pagamento Digital</h3>
+                    <p>Aceitamos Pix e Cartão de Crédito direto no app. Muito mais segurança e praticidade.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- COMO FUNCIONA -->
+    <section id="como-funciona" class="como-funciona">
+        <div class="container">
+            <h2 class="h2 animar">Como aproveitar a inauguração</h2>
+
+            <div class="passos-container">
+                <div class="passos-linha">
+                    <div class="passos-linha-progresso animar" id="linha-progresso"></div>
+                </div>
+
+                <div class="passo animar" style="transition-delay: 200ms;">
+                    <div class="passo-numero" data-target="1">0</div>
+                    <div class="passo-texto">
+                        <h3>Baixe o App</h3>
+                        <p>Disponível para iOS e Android. Faça seu cadastro rápido.</p>
+                    </div>
+                </div>
+
+                <div class="passo animar" style="transition-delay: 500ms;">
+                    <div class="passo-numero" data-target="2">0</div>
+                    <div class="passo-texto">
+                        <h3>Vá até a Unidade</h3>
+                        <p>R. Zuferey, 393. A partir do dia 27/05 às 12h.</p>
+                    </div>
+                </div>
+
+                <div class="passo animar" style="transition-delay: 800ms;">
+                    <div class="passo-numero" data-target="3">0</div>
+                    <div class="passo-texto">
+                        <h3>Use o Cupom</h3>
+                        <p>Insira INAUGURACAO no app e aproveite o desconto.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- APP SECTION -->
+    <section id="app" class="app-section">
+        <div class="container app-grid">
+            <div class="app-mockup-wrapper animar-esquerda">
+                <img src="assets/mockup.png" alt="App Showcase" class="app-mockup" id="mockup">
+            </div>
+
+            <div class="app-text animar-direita">
+                <h2 class="h2">Tudo na <span>palma da sua mão</span></h2>
+                <p class="body-text">O App ACQUA foi criado para facilitar a sua vida. Esqueça fichas ou moedas.</p>
+
+                <ul class="app-bullets">
+                    <li class="app-bullet animar" style="transition-delay: 100ms;">
+                        <i class="ph ph-check-circle bullet-check"></i>
+                        Saiba quais máquinas estão livres antes de sair de casa
+                    </li>
+                    <li class="app-bullet animar" style="transition-delay: 250ms;">
+                        <i class="ph ph-check-circle bullet-check"></i>
+                        Acompanhe o tempo do ciclo pelo celular
+                    </li>
+                    <li class="app-bullet animar" style="transition-delay: 400ms;">
+                        <i class="ph ph-check-circle bullet-check"></i>
+                        Pagamento fácil com Pix ou Cartão de Crédito
+                    </li>
+                    <li class="app-bullet animar" style="transition-delay: 550ms;">
+                        <i class="ph ph-check-circle bullet-check"></i>
+                        Histórico de uso e cupons de desconto
+                    </li>
+                </ul>
+
+                <div class="store-btns animar" style="transition-delay: 700ms;">
+                    <a href="https://apps.apple.com/us/app/acqua-lavanderia/id6553957358" target="_blank"
+                        class="store-btn">
+                        <i class="ph ph-apple-logo" style="font-size: 1.5rem;"></i>
+                        <div>
+                            <div class="small-text" style="line-height: 1;">Baixar na</div>
+                            <div style="line-height: 1;">App Store</div>
+                        </div>
+                    </a>
+                    <a href="https://play.google.com/store/apps/details?id=com.cicclo.acqua&hl=pt" target="_blank"
+                        class="store-btn">
+                        <i class="ph ph-google-play-logo" style="font-size: 1.5rem;"></i>
+                        <div>
+                            <div class="small-text" style="line-height: 1;">Disponível no</div>
+                            <div style="line-height: 1;">Google Play</div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- LOCALIZAÇÃO -->
+    <section id="localizacao">
+        <div class="container localizacao-grid">
+            <div class="localizacao-info animar-esquerda">
+                <h2 class="h2">Venha nos conhecer</h2>
+
+                <div class="info-items">
+                    <div class="info-item animar" style="transition-delay: 100ms;">
+                        <div class="info-icon"><i class="ph ph-map-pin"></i></div>
+                        <div class="info-texto">
+                            <h4>Endereço</h4>
+                            <p>R. Zuferey, 393 — Vila Arens/Vila Progresso<br>Jundiaí - SP, 13202-420</p>
+                        </div>
+                    </div>
+
+                    <div class="info-item animar" style="transition-delay: 200ms;">
+                        <div class="info-icon"><i class="ph ph-clock"></i></div>
+                        <div class="info-texto">
+                            <h4>Horário de Funcionamento</h4>
+                            <p>Aberto 24 horas, todos os dias da semana</p>
+                        </div>
+                    </div>
+
+                    <a href="https://wa.me/5511998525796?text=Olá,%20gostaria%20de%20saber%20mais%20sobre%20a%20inauguração%20da%20ACQUA%20Progresso!"
+                        target="_blank" class="info-item animar" style="transition-delay: 300ms;">
+                        <div class="info-icon"><i class="ph ph-whatsapp-logo"></i></div>
+                        <div class="info-texto">
+                            <h4>WhatsApp</h4>
+                            <p>(11) 99852-5796</p>
+                        </div>
+                    </a>
+
+                    <a href="https://instagram.com/acqua.progresso" target="_blank" class="info-item animar"
+                        style="transition-delay: 400ms;">
+                        <div class="info-icon"><i class="ph ph-instagram-logo"></i></div>
+                        <div class="info-texto">
+                            <h4>Instagram</h4>
+                            <p>@acqua.progresso</p>
+                        </div>
+                    </a>
+                </div>
+
+                <a href="https://maps.google.com/?q=R.+Zuferey,+393+-+Vila+Arens/Vila+Progresso,+Jundiai+-+SP"
+                    target="_blank" class="btn btn-primary animar">
+                    <i class="ph ph-map-trifold"></i> Como chegar
+                </a>
+            </div>
+
+            <div class="mapa-wrapper animar-direita">
+                <!-- Using a generic embed for the address -->
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3667.652150917637!2d-46.8778688!3d-23.1828551!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94cf269784dfd0dd%3A0xc6e4ff4f5e71c!2sR.%20Zuferey%2C%20393%20-%20Vila%20Arens%20%2F%20Vila%20Progresso%2C%20Jundia%C3%AD%20-%20SP%2C%2013202-420!5e0!3m2!1spt-BR!2sbr!4v1715655000000!5m2!1spt-BR!2sbr"
+                    allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq" class="faq">
+        <div class="container">
+            <h2 class="h2 text-center animar" style="text-align: center;">Dúvidas Frequentes</h2>
+
+            <div class="faq-container">
+                <div class="faq-item animar" style="transition-delay: 100ms;">
+                    <div class="faq-pergunta">
+                        Preciso levar sabão e amaciante?
+                        <i class="ph ph-plus faq-icon"></i>
+                    </div>
+                    <div class="faq-resposta">
+                        <div class="faq-resposta-inner">
+                            Não! Nossas máquinas já dosam automaticamente sabão e amaciante de linha profissional em
+                            todas as lavagens. O valor já está incluso.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item animar" style="transition-delay: 180ms;">
+                    <div class="faq-pergunta">
+                        Como uso o cupom de inauguração?
+                        <i class="ph ph-plus faq-icon"></i>
+                    </div>
+                    <div class="faq-resposta">
+                        <div class="faq-resposta-inner">
+                            Baixe o app, faça seu cadastro e, na hora de pagar pela sua primeira lavagem, insira o
+                            código <strong>INAUGURACAO</strong> no campo de cupons para receber o desconto.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item animar" style="transition-delay: 260ms;">
+                    <div class="faq-pergunta">
+                        Quais as formas de pagamento?
+                        <i class="ph ph-plus faq-icon"></i>
+                    </div>
+                    <div class="faq-resposta">
+                        <div class="faq-resposta-inner">
+                            Aceitamos pagamentos exclusivamente pelo App ACQUA, via Pix ou Cartão de Crédito. Tudo
+                            digital e seguro, sem necessidade de fichas ou moedas.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item animar" style="transition-delay: 340ms;">
+                    <div class="faq-pergunta">
+                        Quanto tempo demora para lavar e secar?
+                        <i class="ph ph-plus faq-icon"></i>
+                    </div>
+                    <div class="faq-resposta">
+                        <div class="faq-resposta-inner">
+                            O ciclo de lavagem dura em média 35 minutos e o de secagem 45 minutos. Em pouco mais de uma
+                            hora você tem suas roupas limpas, secas e prontas para guardar.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item animar" style="transition-delay: 420ms;">
+                    <div class="faq-pergunta">
+                        O que não posso lavar na máquina?
+                        <i class="ph ph-plus faq-icon"></i>
+                    </div>
+                    <div class="faq-resposta">
+                        <div class="faq-resposta-inner">
+                            Não é permitido lavar tapetes, calçados, caminhas de pet, panos de chão, roupas com graxa ou
+                            excesso de pelos, e itens com restrição de lavagem a máquina na etiqueta.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item animar" style="transition-delay: 500ms;">
+                    <div class="faq-pergunta">
+                        Posso reservar a máquina antes de chegar?
+                        <i class="ph ph-plus faq-icon"></i>
+                    </div>
+                    <div class="faq-resposta">
+                        <div class="faq-resposta-inner">
+                            Sim! Pelo app você consegue ver quais máquinas estão livres e bloqueá-las pelo tempo de
+                            deslocamento até a loja.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item animar" style="transition-delay: 580ms;">
+                    <div class="faq-pergunta">
+                        Tem alguém na loja para me ajudar?
+                        <i class="ph ph-plus faq-icon"></i>
+                    </div>
+                    <div class="faq-resposta">
+                        <div class="faq-resposta-inner">
+                            Somos uma lavanderia self-service, mas nosso suporte está disponível via WhatsApp para te
+                            ajudar com qualquer dúvida no uso das máquinas ou do aplicativo!
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA FINAL -->
+    <section class="cta-final">
+        <div class="container cta-final-content animar">
+            <h2 class="h2">Não perca o desconto de inauguração!</h2>
+            <p class="body-text" style="max-width: 600px; text-align: center;">A promoção é válida apenas na primeira
+                semana. Baixe o app agora e deixe tudo pronto para o dia 27.</p>
+            <a href="#app" class="btn btn-cta-final">
+                Baixar App Agora
+            </a>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <a href="#" class="footer-logo">
+                        <img src="assets/oficiais/logo_acqua_nova.png" alt="ACQUA Lavanderia Express"
+                            style="height: 100px; filter: brightness(0) invert(1);">
+                    </a>
+                    <p class="small-text" style="max-width: 300px; margin-top: 1rem;">A nova era da sua lavanderia.
+                        Praticidade, economia e tecnologia trabalhando por você 24 horas por dia.</p>
+                    <div class="footer-social">
+                        <a href="https://instagram.com/acqua.progresso" target="_blank" class="social-icon"
+                            aria-label="Instagram">
+                            <i class="ph ph-instagram-logo"></i>
+                        </a>
+                        <a href="https://wa.me/5511998525796" target="_blank" class="social-icon" aria-label="WhatsApp">
+                            <i class="ph ph-whatsapp-logo"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Links Rápidos</h4>
+                    <div class="footer-links">
+                        <a href="#hero">Inauguração</a>
+                        <a href="#vantagens">Vantagens</a>
+                        <a href="#como-funciona">Como Funciona</a>
+                        <a href="#faq">Dúvidas Frequentes</a>
+                    </div>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Contato</h4>
+                    <div class="footer-links">
+                        <a href="https://wa.me/5511998525796" target="_blank">(11) 99852-5796</a>
+                        <p class="small-text" style="margin-top: 0.5rem;">R. Zuferey, 393<br>Vila Arens / Vila
+                            Progresso<br>Jundiaí - SP</p>
+                    </div>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Baixe o App</h4>
+                    <div class="footer-links">
+                        <a href="https://apps.apple.com/us/app/acqua-lavanderia/id6553957358" target="_blank"><i
+                                class="ph ph-apple-logo"></i> App Store</a>
+                        <a href="https://play.google.com/store/apps/details?id=com.cicclo.acqua&hl=pt"
+                            target="_blank"><i class="ph ph-google-play-logo"></i> Google Play</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2026 ACQUA Lavanderia Express. Unidade Progresso. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WHATSAPP FLOATING -->
+    <a href="https://wa.me/5511998525796?text=Olá,%20gostaria%20de%20saber%20mais%20sobre%20a%20inauguração%20da%20ACQUA%20Progresso!"
+        target="_blank" class="whatsapp-float" aria-label="Fale conosco no WhatsApp">
+        <i class="ph ph-whatsapp-logo"></i>
+    </a>
+
+    <!-- TOAST -->
+    <div class="toast" id="toast">
+        <i class="ph ph-check-circle toast-icon"></i>
+        <span>Cupom INAUGURACAO copiado!</span>
+    </div>
+
+    <!-- JAVASCRIPT -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+
+            // --- HEADER SCROLL ---
+            const header = document.getElementById('header');
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 50) {
+                    header.classList.add('scrolled');
+                } else {
+                    header.classList.remove('scrolled');
+                }
+            });
+
+            // --- MOBILE MENU ---
+            const menuToggle = document.getElementById('menu-toggle');
+            const navLinks = document.getElementById('nav-links');
+
+            menuToggle.addEventListener('click', () => {
+                navLinks.classList.toggle('active');
+                const icon = menuToggle.querySelector('i');
+                if (navLinks.classList.contains('active')) {
+                    icon.classList.replace('ph-list', 'ph-x');
+                } else {
+                    icon.classList.replace('ph-x', 'ph-list');
+                }
+            });
+
+            // Fecha menu ao clicar em um link
+            navLinks.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => {
+                    navLinks.classList.remove('active');
+                    menuToggle.querySelector('i').classList.replace('ph-x', 'ph-list');
+                });
+            });
+
+            // --- COUNTDOWN ---
+            // Data alvo: 27/05/2026 às 12:00:00 (Timezone São Paulo, mas usaremos local pro front simplificado)
+            const targetDate = new Date('2026-05-27T12:00:00').getTime();
+
+            const elDias = document.getElementById('dias');
+            const elHoras = document.getElementById('horas');
+            const elMin = document.getElementById('min');
+            const elSeg = document.getElementById('seg');
+
+            let lastVals = { d: -1, h: -1, m: -1, s: -1 };
+
+            function updateCountdown() {
+                const now = new Date().getTime();
+                const distance = targetDate - now;
+
+                if (distance < 0) {
+                    elDias.innerText = "00"; elHoras.innerText = "00";
+                    elMin.innerText = "00"; elSeg.innerText = "00";
+                    return;
+                }
+
+                const d = Math.floor(distance / (1000 * 60 * 60 * 24));
+                const h = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const m = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                const s = Math.floor((distance % (1000 * 60)) / 1000);
+
+                updateFlip(elDias, d, 'd');
+                updateFlip(elHoras, h, 'h');
+                updateFlip(elMin, m, 'm');
+                updateFlip(elSeg, s, 's');
+            }
+
+            function updateFlip(el, val, key) {
+                const formatted = val < 10 ? '0' + val : val;
+                if (lastVals[key] !== val) {
+                    el.classList.add('tick');
+                    el.innerText = formatted;
+                    setTimeout(() => el.classList.remove('tick'), 150);
+                    lastVals[key] = val;
+                }
+            }
+
+            setInterval(updateCountdown, 1000);
+            updateCountdown(); // Call immediately
+
+            // Código do cupom foi removido.
+
+            // --- FAQ ACCORDION ---
+            const faqItems = document.querySelectorAll('.faq-item');
+
+            faqItems.forEach(item => {
+                const question = item.querySelector('.faq-pergunta');
+
+                question.addEventListener('click', () => {
+                    const isActive = item.classList.contains('ativo');
+
+                    // Close all
+                    faqItems.forEach(faq => {
+                        faq.classList.remove('ativo');
+                        faq.querySelector('.faq-resposta').style.maxHeight = null;
+                    });
+
+                    // Open if it wasn't active
+                    if (!isActive) {
+                        item.classList.add('ativo');
+                        const answer = item.querySelector('.faq-resposta');
+                        answer.style.maxHeight = answer.scrollHeight + "px";
+                    }
+                });
+            });
+
+            // --- INTERSECTION OBSERVER ANIMATIONS ---
+            const animarElements = document.querySelectorAll('.animar, .animar-esquerda, .animar-direita');
+            const observerOptions = {
+                threshold: 0.15,
+                rootMargin: "0px 0px -50px 0px"
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visivel');
+
+                        // Handle numbers animation for "Como Funciona"
+                        if (entry.target.classList.contains('passo')) {
+                            const numEl = entry.target.querySelector('.passo-numero');
+                            const target = parseInt(numEl.getAttribute('data-target'));
+                            setTimeout(() => {
+                                animateValue(numEl, 0, target, 500);
+                            }, 500); // Wait for the pop-in animation
+                        }
+
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+
+            animarElements.forEach(el => observer.observe(el));
+
+            // Number animation function
+            function animateValue(obj, start, end, duration) {
+                let startTimestamp = null;
+                const step = (timestamp) => {
+                    if (!startTimestamp) startTimestamp = timestamp;
+                    const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+                    obj.innerHTML = Math.floor(progress * (end - start) + start);
+                    if (progress < 1) {
+                        window.requestAnimationFrame(step);
+                    }
+                };
+                window.requestAnimationFrame(step);
+            }
+
+            // --- MOCKUP PARALLAX ---
+            const mockup = document.getElementById('mockup');
+            const appSection = document.getElementById('app');
+
+            appSection.addEventListener('mousemove', (e) => {
+                // Avoid heavy calc on mobile
+                if (window.innerWidth < 768) return;
+
+                const xAxis = (window.innerWidth / 2 - e.pageX) / 25;
+                const yAxis = (window.innerHeight / 2 - e.pageY) / 25;
+                mockup.style.transform = `rotateY(${xAxis}deg) rotateX(${yAxis}deg) translateY(-15px)`;
+            });
+
+            appSection.addEventListener('mouseleave', () => {
+                mockup.style.transform = `rotateY(0deg) rotateX(0deg) translateY(-15px)`;
+                mockup.style.transition = 'transform 0.5s ease';
+                setTimeout(() => { mockup.style.transition = ''; }, 500);
+            });
+        });
+    </script>
+</body>
+
+</html>
